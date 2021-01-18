@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: arvesvpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arvesvpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: arvesvpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: arvesvpipelinesjavascriptdocker 
+          image: arveaks.azurecr.io/arvesvpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
